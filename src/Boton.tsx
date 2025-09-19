@@ -11,3 +11,4 @@ export function Boton() {
     </button>
   );
 }
+/*este boton todos lo utilizan */
