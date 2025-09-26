@@ -1,14 +1,32 @@
-//import React from 'react';
+import { useState } from "react";
 
-export function Boton() {
+type Props = {
+  onAdicionar: (texto: string) => void // void significa que no retorna nada 
+};
+
+export function Boton({onAdicionar}: Props){
+  const [texto, setTexto] = useState('');
+
   const handleClick = () => {
-    alert('Hiciste click!');
+    if (texto.trim() !== '') {
+      onAdicionar(texto);
+      setTexto('');
+    } else {
+      alert('Por favor ingresa una tarea');
+    }
   };
 
   return (
-    <button onClick={handleClick}>
-      Adicionar tarea
-    </button>
+    <div> 
+      <input
+      type= "text"
+      value={texto}
+      onChange={e => setTexto(e.target.value)}
+      placeholder="Escribe un tarea nueva"
+      />
+      <button onClick={handleClick}>
+        Adicionar tarea 
+      </button>
+    </div>
   );
 }
-/*este boton todos lo utilizan */
