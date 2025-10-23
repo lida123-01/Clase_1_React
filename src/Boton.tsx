@@ -22,7 +22,7 @@ export function Boton({onAdicionar}: Props){
       type= "text"
       value={texto}
       onChange={e => setTexto(e.target.value)}
-      placeholder="Escribe un tarea nueva"
+      placeholder="Escribe una tarea nueva"
       />
       <button onClick={handleClick}>
         Adicionar tarea 
